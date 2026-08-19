@@ -1,0 +1,8 @@
+{
+  "name": "Playwrite-course",
+  "packageManager": "yarn@4.18.0",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0"
+  }
+}
