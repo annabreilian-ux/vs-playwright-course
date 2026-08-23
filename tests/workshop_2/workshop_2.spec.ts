@@ -1,23 +1,23 @@
 import {test, expect} from '@playwright/test';
 
-test.skip('Automation Form Submition', async({page})=>{
+test('Automation Form Submition', async({page})=>{
 await page.goto('https://demo.playwright.dev/todomvc');
-const newTodo =await page.getByPlaceholder('What needs to be done?');  
+const newTodo =page.getByPlaceholder('What needs to be done?');  
 await newTodo.fill('John Doe');  
 await newTodo.press('Enter');
 await newTodo.fill('Jane Doe');
 await newTodo.press('Enter');
 
-const firstTodo = await page.getByTestId('todo-item').nth(0);
+const firstTodo = page.getByTestId('todo-item').nth(0);
 await firstTodo.getByRole('checkbox').check();
 
-const secondTodo = await page.getByTestId('todo-item').nth(1);
+const secondTodo = page.getByTestId('todo-item').nth(1);
 await expect(secondTodo).not.toHaveClass('completed');
 await expect(firstTodo).toHaveClass('completed');
 await page.waitForTimeout(3000);
 })
 
-test.only('Handling Form', async({page})=>{
+test('Handling Form', async({page})=>{
 await page.goto('https://demo.playwright.dev/todomvc');
 const placeholder = '[placeholder="What needs to be done?"]';
 await page.fill(placeholder, 'John Doe');

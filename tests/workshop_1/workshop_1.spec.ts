@@ -1,12 +1,12 @@
 import {test} from 'playwright/test';
 
-test.skip('Basic Navigation', async({page})=>{
+test('Basic Navigation', async({page})=>{
 await page.goto('https://gitlab.com/');
 await page.waitForTimeout(3000);
 await page.reload();   
 })
 
-test.skip( 'Interacting with Web Element on GitLab', async({page})=>{
+test( 'Interacting with Web Element on GitLab', async({page})=>{
 await page.goto('https://gitlab.com/');
 await page.click('#onetrust-accept-btn-handler');
 await page.locator('div.navigation__actions').getByRole('link', {name: 'Get free trial'}).click(); 
