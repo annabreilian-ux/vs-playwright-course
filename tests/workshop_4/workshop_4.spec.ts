@@ -27,7 +27,7 @@ test ('Handling Confirm', async({page})=>{
     await page.waitForTimeout(3000);
 })
 
-test.only ('Handling POP_UPs', async({page})=>{
+test ('Handling POP_UPs', async({page})=>{
     await page.goto('file:///D:/Anna/Playwrite-course/tests/Workshop_4/index.html');
     const [popup] = await Promise.all([
         page.waitForEvent('popup'),
