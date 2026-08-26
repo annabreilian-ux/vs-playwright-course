@@ -11,7 +11,7 @@ test.describe('UserRegistration Tests', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('file:///D:/Anna/Playwrite-course/tests/workshop_6/index.html');
     });
-    test.only('Register with valid data', async ({ page }) => {
+    test('Register with valid data', async ({ page }) => {
         await page.fill('#firstName', testData.Name);
         await page.fill('#lastName', testData.LastName);
         await page.fill('#address', testData.Address);
@@ -28,14 +28,14 @@ test.describe('UserRegistration Tests', () => {
         expect(addressText).toEqual(testData.Address);
         expect(numberText).toEqual (testData.Number);
     });
-    test.only('Register with empty fields', async ({ page }) => {
+    test('Register with empty fields', async ({ page }) => {
         await page.click('#register');
         await page.fill('#firstName', testData.Name);
         await page.fill('#lastName', testData.LastName);
         const error = await page.locator('#error p').textContent();
         expect(error).toBe('Please fill in all fields.');
     });
-    test.only('Register with all empty fields', async ({ page }) => {
+    test('Register with all empty fields', async ({ page }) => {
         await page.click('#register');
         const error = await page.locator('#error p').textContent();
         expect(error).toBe('Please fill in all fields.');
