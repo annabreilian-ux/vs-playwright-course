@@ -11,14 +11,13 @@ test('Open new window and navigate back', async({context, page})=>{
     await page.waitForTimeout(3000);
 })
 
-test.only('Add Cookie', async({page})=>{
-    await page.goto('file:///D:/Anna/Playwrite-course/tests/Workshop_5/index.html');
+test('Add Cookie', async ({page})=>{
+    await page.goto('http://localhost:8080/index.html');
     await page.click('#setCookie');
-    const cookies = page.context().cookies('file:///D:/Anna/Playwrite-course/tests/Workshop_5/index.html');
-    const sessionCookie = (await cookies).find(cookie => cookie.name === 'session');
-    console.log('Session Cookie:', sessionCookie);
-    expect('Session Cookie',sessionCookie).toBeDefined();
-    await page.waitForTimeout(3000);
+    const cookies = await page.context().cookies('http://localhost:8080/index.html');
+    const sessionCookie = cookies.find(cookies => cookies.name === 'session');
+    console.log('Session cookie',sessionCookie);
+    expect(sessionCookie).toBeDefined();
 })
 
 test('Delete Cookie', async({page})=>{
