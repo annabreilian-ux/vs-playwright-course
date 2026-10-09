@@ -6,7 +6,7 @@ import {Input} from "./input";
 export class PageObject extends AbstractPage{
 private button: Button;
 private input: Input;
-readonly firstNamreInputSelector = '#firstName';
+readonly firstNameInputSelector = '#firstName';
 readonly ageInputSelector = '#age';
 readonly isStudentCheckboxSelector = '#isStudent';
 readonly applyDataButtonSelector = '#applyData';
@@ -31,7 +31,7 @@ readonly displayIsStudent = '#displayIsStudent';
     }
 
     async fillFirstName (value: string): Promise<void> {
-        await this.input.setInputValue(this.firstNamreInputSelector, value)  
+        await this.input.setInputValue(this.firstNameInputSelector, value)  
     }
 
     async fillAge (value: string): Promise<void> {
