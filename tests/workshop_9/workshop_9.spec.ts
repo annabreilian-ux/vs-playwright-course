@@ -16,7 +16,7 @@ test('Automation From Submission @githubaction', async ({page}) => {
     await expect(secondTodo).not.toHaveClass('completed');
 })
 
-test.only('Handling Form @githubaction', async ({page}) => {
+test('Handling Form @githubaction', async ({page}) => {
     await page.goto('https://demo.playwright.dev/todomvc');
     await page.fill('[placeholder="What needs to be done?"]', 'John Doe');
     await page.press('[placeholder="What needs to be done?"]', 'Enter');
