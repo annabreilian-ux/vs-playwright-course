@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { PageObject } from "./page/page";
+import { PageObject } from "./page/Page";
 import * as testData from "./testData.json";
 
 test.describe('Sample Test', () => {
